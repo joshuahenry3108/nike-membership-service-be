@@ -23,7 +23,7 @@ revolte:
               DATABASE_PORT: '#{dotnet-service-db.dbPort}'
               DATABASE_USERNAME: '#{dotnet-service-db.dbUsername}'
               DATABASE_PASSWORD: '#{dotnet-service-db.dbPassword}'
-              DATABASE_NAME: '#{dotnet-service-db.dbName}'
+              DATABASE_NAME: 'MYSQL'
               THIRD_PARTY_URL: "https://testtt.requestcatcher.com/"
         rid_2:
           name: dotnet-service-db
