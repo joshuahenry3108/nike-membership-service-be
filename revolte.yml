@@ -1,7 +1,7 @@
 revolte:
   version: '1.0'
-  project: Shield-academy
-  appName: sample BE testing
+  project: PSG
+  appName: dotnet-BE
   env:
     staging:
       branch: main
