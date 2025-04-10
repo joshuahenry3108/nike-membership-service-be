@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using dotnet06.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,7 +16,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddHttpClient();
-
+builder.Services.AddHealthChecks()
+    .AddCheck("system", () => HealthCheckResult.Healthy("System is running"));
 // Retrieve individual connection variables
 var dbHost = builder.Configuration["DATABASE_URL"]
     ?? throw new InvalidOperationException("Environment variable 'DATABASE_URL' is not set.");
@@ -22,7 +25,7 @@ var dbPort = builder.Configuration["DATABASE_PORT"] ?? "3306"; // Default to 330
 var dbName = builder.Configuration["DATABASE_NAME"]
     ?? throw new InvalidOperationException("Environment variable 'DATABASE_NAME' is not set.");
 var dbUser = builder.Configuration["DATABASE_USERNAME"]
-    ?? throw new InvalidOperationException("Environment variable 'DATABASE_USER' is not set.");
+    ?? throw new InvalidOperationException("Environment variable 'DATABASE_USERNAME' is not set.");
 var dbPassword = builder.Configuration["DATABASE_PASSWORD"]
     ?? throw new InvalidOperationException("Environment variable 'DATABASE_PASSWORD' is not set.");
 
@@ -62,6 +65,20 @@ if (app.Environment.IsDevelopment())
 
 app.UsePathBase(baseUrl);
 app.UseRouting();
+
 // Map controllers
+app.MapHealthChecks("/health", new HealthCheckOptions
+{
+   ResponseWriter = async (context, report) =>
+   {
+       context.Response.ContentType = "application/json";
+       var response = new
+       {
+           success = true,
+           status = report.Status.ToString()
+       };
+       await context.Response.WriteAsJsonAsync(response);
+   }
+});
 app.MapControllers();
 app.Run();
