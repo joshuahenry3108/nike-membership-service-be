@@ -7,7 +7,7 @@ revolte:
       branch: main
       services:
         rid_1:
-          name: dotnet-service
+          name: dotnetbe-service
           type: WEB_SERVICE
           entryPoint: Program.cs
           specifications:
