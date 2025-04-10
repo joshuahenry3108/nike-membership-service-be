@@ -1,9 +1,9 @@
 revolte:
   version: '1.0'
-  project: PSG
-  appName: dotnet-BE
+  project: Project-QA
+  appName: dotnet-backend
   env:
-    staging:
+    qa:
       branch: main
       services:
         rid_1:
