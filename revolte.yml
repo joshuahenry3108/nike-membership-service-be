@@ -1,9 +1,9 @@
 revolte:
   version: '1.0'
-  project: Project-QA
-  appName: dotnet-backend
+  project: Revolte
+  appName: backend-test2
   env:
-    qa:
+    preview:
       branch: main
       services:
         rid_1:
