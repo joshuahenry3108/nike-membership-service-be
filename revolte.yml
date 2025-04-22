@@ -1,7 +1,7 @@
 revolte:
   version: '1.0'
-  project: Revolte
-  appName: backend-test2
+  project: NewProject
+  appName: testing
   env:
     preview:
       branch: main
