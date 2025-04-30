@@ -1,7 +1,7 @@
 revolte:
   version: '1.0'
-  project: NewProject
-  appName: Testing
+  project: salesforce 2.0
+  appName: CRM-portal-be
   env:
     preview:
       branch: main
