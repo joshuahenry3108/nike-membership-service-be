@@ -9,14 +9,14 @@ revolte:
         rid_1:
           name: renau-service
           type: WEB_SERVICE
-          entryPoint: index.js
+          entryPoint: Program.cs
           specifications:
             cpu: 2
             memory: 2
             storage: 30
           properties:
             health: /health
-            port: 8080
+            port: 3000
             variables:
               BASE_URL: /api/v1
               DATABASE_URL: '#{db.dbUrl}'
