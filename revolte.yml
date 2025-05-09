@@ -1,13 +1,13 @@
 revolte:
   version: '1.0'
-  project: LamdaTest
-  appName: test-mysql-application
+  project: Katalon
+  appName: katalon-app
   env:
     staging:
       branch: main
       services:
         rid_1:
-          name: lamda-sql-service
+          name: katalon-web-service
           type: WEB_SERVICE
           entryPoint: Program.cs
           specifications:
