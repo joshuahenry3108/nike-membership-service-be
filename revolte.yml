@@ -1,13 +1,13 @@
 revolte:
   version: '1.0'
-  project: Renault
-  appName: rena-app
+  project: LamdaTest
+  appName: mysql-app
   env:
     staging:
       branch: main
       services:
         rid_1:
-          name: renau-service
+          name: lamdaweb-service
           type: WEB_SERVICE
           entryPoint: Program.cs
           specifications:
