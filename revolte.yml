@@ -1,13 +1,13 @@
 revolte:
   version: '1.0'
   project: LamdaTest
-  appName: mysql-app
+  appName: test-mysql-application
   env:
     staging:
       branch: main
       services:
         rid_1:
-          name: lamdaweb-service
+          name: lamda-sql-service
           type: WEB_SERVICE
           entryPoint: Program.cs
           specifications:
@@ -16,7 +16,7 @@ revolte:
             storage: 30
           properties:
             health: /health
-            port: 3000
+            port: 8080
             variables:
               BASE_URL: /api/v1
               DATABASE_URL: '#{db.dbUrl}'
