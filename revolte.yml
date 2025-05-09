@@ -1,13 +1,13 @@
 revolte:
   version: '1.0'
   project: Katalon
-  appName: katalon-app
+  appName: mysql-app
   env:
     staging:
       branch: main
       services:
         rid_1:
-          name: katalon-web-service
+          name: katweb-service
           type: WEB_SERVICE
           entryPoint: Program.cs
           specifications:
@@ -16,7 +16,7 @@ revolte:
             storage: 30
           properties:
             health: /health
-            port: 8080
+            port: 3000
             variables:
               BASE_URL: /api/v1
               DATABASE_URL: '#{db.dbUrl}'
