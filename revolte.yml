@@ -104,7 +104,7 @@ revolte:
           entryPoint: Program.cs
           specifications:
             cpu: 2
-            memory: 2
+            memory: 4
             storage: 30
           properties:
             health: /health
@@ -124,5 +124,5 @@ revolte:
           specifications:
             engine: postgres
             cpu: 2
-            memory: 1
+            memory: 4
             storage: 20
